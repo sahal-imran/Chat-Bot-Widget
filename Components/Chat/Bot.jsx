@@ -93,13 +93,19 @@ function Bot() {
             Ask us !
           </Typography>
         </Box>
-        <ClearIcon
+        <Box
           sx={
             Show_Bot
-              ? { color: "#A9A6A6", fontSize: "30px" }
+              ? {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItem: "center",
+                }
               : { display: "none" }
           }
-        />
+        >
+          <ClearIcon sx={{ color: "#A9A6A6", fontSize: "30px" }} />
+        </Box>
       </Button>
     </Box>
   );
