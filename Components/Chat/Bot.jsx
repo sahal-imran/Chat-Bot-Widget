@@ -81,7 +81,7 @@ function Bot() {
           {/* Text */}
           <Typography
             sx={{
-              fontFamily: "",
+              fontFamily: "Assistant",
               fontSize: "37px",
               lineHeight: "48px",
               fontWeight: 600,
