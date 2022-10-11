@@ -45,57 +45,61 @@ function Bot() {
             background: "#9A4A4D",
           },
         }}
-        className={Show_Bot ? "Show-Bot" : "Hide-Bot"}
+        className={Show_Bot ? "Show-Bot" : ""}
       >
-        <Fade big>
+        <Box
+          sx={
+            Show_Bot
+              ? {
+                  display: "none",
+                }
+              : {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItem: "center",
+                  width: "100%",
+                }
+          }
+        >
+          {/* Icon */}
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItem: "center",
-              width: "100%",
+              position: "relative",
+              width: "40px",
+              height: "40px",
+              mr: 1,
+              mt: 0.8,
             }}
-            className={Show_Bot ? "Hide" : "Show"}
           >
-            {/* Icon */}
-            <Box
-              sx={{
-                position: "relative",
-                width: "40px",
-                height: "40px",
-                mr: 1,
-                mt: 0.8,
-              }}
-            >
-              <Image
-                alt=""
-                src={"/Assets/Chat-start-icon.svg"}
-                layout="fill"
-                objectFit="contain"
-              />
-            </Box>
-            {/* Text */}
-            <Typography
-              sx={{
-                fontFamily: "",
-                fontSize: "37px",
-                lineHeight: "48px",
-                fontWeight: 600,
-                fontStyle: "normal",
-                textTransform: "capitalize",
-                color: "#FFFFFF",
-              }}
-            >
-              Ask us !
-            </Typography>
+            <Image
+              alt=""
+              src={"/Assets/Chat-start-icon.svg"}
+              layout="fill"
+              objectFit="contain"
+            />
           </Box>
-        </Fade>
-        <Fade big>
-          <ClearIcon
-            className={Show_Bot ? "Show" : "Hide"}
-            sx={{ color: "#A9A6A6", fontSize: "30px" }}
-          />
-        </Fade>
+          {/* Text */}
+          <Typography
+            sx={{
+              fontFamily: "",
+              fontSize: "37px",
+              lineHeight: "48px",
+              fontWeight: 600,
+              fontStyle: "normal",
+              textTransform: "capitalize",
+              color: "#FFFFFF",
+            }}
+          >
+            Ask us !
+          </Typography>
+        </Box>
+        <ClearIcon
+          sx={
+            Show_Bot
+              ? { color: "#A9A6A6", fontSize: "30px" }
+              : { display: "none" }
+          }
+        />
       </Button>
     </Box>
   );
