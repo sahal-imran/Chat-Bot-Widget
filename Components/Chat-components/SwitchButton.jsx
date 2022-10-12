@@ -10,9 +10,9 @@ function SwitchButton({ Current_state, Change_State, Ico }) {
       sx={
         Current_state
           ? {
-              minWidth: "57px",
-              width: "57px",
-              height: "62px",
+              minWidth: { md: "57px", xs: "38px" },
+              width: { md: "57px", xs: "38px" },
+              height: { md: "62px", xs: "40px" },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -26,9 +26,9 @@ function SwitchButton({ Current_state, Change_State, Ico }) {
               },
             }
           : {
-              minWidth: "57px",
-              width: "57px",
-              height: "62px",
+              minWidth: { md: "57px", xs: "38px" },
+              width: { md: "57px", xs: "38px" },
+              height: { md: "62px", xs: "40px" },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

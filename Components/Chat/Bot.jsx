@@ -7,6 +7,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import SwitchButton from "../Chat-components/SwitchButton";
+import IconButton from "@mui/material/IconButton";
 
 function Bot() {
   // State to show bot
@@ -99,7 +100,7 @@ function Bot() {
               width: "40px",
               height: "40px",
               mr: 1,
-              mt: 0.8,
+              mt: 0.5,
             }}
           >
             <Image
@@ -144,7 +145,7 @@ function Bot() {
         sx={
           Show_Bot
             ? {
-                width: "881px",
+                width: { md: "881px", xs: "90%" },
                 height: "587px",
                 display: "flex",
                 justifyContent: "center",
@@ -154,7 +155,7 @@ function Bot() {
                 borderRadius: "10px",
                 transition: "all 0.3s ease",
                 position: "absolute",
-                right: "30px",
+                right: { md: "30px", xs: "20px" },
                 bottom: "100px",
                 overflow: "hidden",
               }
@@ -223,8 +224,250 @@ function Bot() {
           sx={{
             width: "100%",
             height: "calc(100% - 93px)",
+            p: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        ></Box>
+        >
+          {/* Chat Box */}
+          <Box
+            sx={{
+              width: { md: "60%", xs: "100%" },
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              background: "rgba(253, 143, 142, 0.1)",
+              boxShadow:
+                "0px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 4px 7px rgba(0, 0, 0, 0.07)",
+              borderRadius: "5px",
+              "&::-webkit-scrollbar": { width: "0px" },
+              p: { md: 2, xs: 2 },
+              position: "relative",
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                height: "calc(100% - 70px)",
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
+                flexDirection: "column",
+                "&::-webkit-scrollbar": { width: "0px" },
+                overflowY: "auto",
+              }}
+            >
+              {/* Welcome message */}
+              <Typography
+                sx={{
+                  fontFamily: "Assistant",
+                  fontSize: { md: "18px", xs: "16px" },
+                  lineHeight: "23.54px",
+                  letterSpacing: "4%",
+                  fontWeight: 600,
+                  fontStyle: "normal",
+                  textTransform: "capitalize",
+                  color: "#FFFFFF",
+                  background: "#9A4A4D",
+                  borderRadius: "10px",
+                  px: 3,
+                  py: 1.5,
+                  textAlign: "start",
+                  alignSelf: "start",
+                }}
+              >
+                Hi ! Welcome to our support
+              </Typography>
+
+              {/* Bot */}
+              <Typography
+                sx={{
+                  fontFamily: "Assistant",
+                  fontSize: { md: "18px", xs: "16px" },
+                  lineHeight: "23.54px",
+                  letterSpacing: "4%",
+                  fontWeight: 600,
+                  fontStyle: "normal",
+                  textTransform: "capitalize",
+                  color: "#FFFFFF",
+                  background: "#9A4A4D",
+                  borderTopLeftRadius: "25px",
+                  borderBottomRightRadius: "25px",
+                  px: 3,
+                  py: 1.5,
+                  textAlign: "start",
+                  alignSelf: "start",
+                  mt: 2,
+                }}
+              >
+                Hi ! Welcome to our support
+              </Typography>
+
+              {/* User */}
+              <Box
+                sx={{
+                  mt: 2,
+                  alignSelf: "end",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#FD8F8E",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    mt: 2.5,
+                  }}
+                >
+                  Hi ! Welcome to our support
+                </Typography>
+                {/* Icon */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: { md: "60px", xs: "40px" },
+                    height: { md: "60px", xs: "40px" },
+                    ml: { md: 2, xs: 1 },
+                    borderRadius: "50px",
+                    overflow: "hidden",
+                    border: "1px solid #FD8F8E",
+                  }}
+                >
+                  <Image
+                    alt=""
+                    src={"/Assets/user.png"}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </Box>
+              </Box>
+            </Box>
+
+            {/* Message typer */}
+            <Box
+              sx={{
+                width: "100%",
+                height: "70px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "90%",
+                  height: "62px",
+                  background: "#F8F8F8",
+                  borderRadius: "10px",
+                  boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.25)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {/* Input */}
+                <Box
+                  sx={{
+                    width: { md: "85%", xs: "90%" },
+                    height: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <input
+                    type="text"
+                    style={{
+                      outline: "none",
+                      boxShadow: "none",
+                      background: "transparent",
+                      border: "none",
+                      width: "100%",
+                      height: "100%",
+                      fontFamily: "Assistant",
+                      fontSize: "20px",
+                      lineHeight: "26.16px",
+                      letterSpacing: "4%",
+                      fontWeight: 600,
+                      fontStyle: "normal",
+                      color: "#B16668",
+                      paddingLeft: "20px",
+                    }}
+                    placeholder="Type your message"
+                  />
+                </Box>
+                {/* Button */}
+                <Box
+                  sx={{
+                    width: { md: "15%", xs: "20%" },
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <IconButton
+                    sx={{
+                      width: "38px",
+                      height: "38px",
+                      background: "#FFFFFF",
+                      boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "relative",
+                        width: "21.27px",
+                        height: "21.27px",
+                        mt: 0.5,
+                        mr: 0.1,
+                      }}
+                    >
+                      <Image
+                        alt=""
+                        src={"/Assets/telegram-icon.svg"}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </Box>
+                  </IconButton>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+
+          {/* Image */}
+          <Box
+            sx={{
+              position: "relative",
+              width: "40%",
+              height: "337px",
+              display: { md: "block", xs: "none" },
+            }}
+          >
+            <Image
+              alt=""
+              src={"/Assets/Chatting-main.svg"}
+              layout="fill"
+              objectFit="contain"
+            />
+          </Box>
+
+          
+        </Box>
       </Box>
     </Box>
   );
