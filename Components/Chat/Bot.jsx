@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import Box from "@mui/material/Box";
 import { Container } from "@mui/system";
@@ -20,7 +20,9 @@ import Angry from "../../public/Assets/emojis/8.Angry.png";
 import Sad from "../../public/Assets/emojis/9.Sad.png";
 
 function Bot() {
+  const scrollRef = useRef();
   // State to show bot
+
   const [Show_Bot, Set_Bot] = useState(false);
 
   // Switch Views
@@ -89,6 +91,9 @@ function Bot() {
         }, 3000);
       }
     }
+  }, [Show_Bot, botMsgCount]);
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behaviour: "smooth" });
   }, [Show_Bot, botMsgCount]);
 
   return (
@@ -169,6 +174,7 @@ function Bot() {
           </Box>
           {/* Text */}
           <Typography
+            ref={scrollRef}
             sx={{
               fontFamily: "Assistant",
               fontSize: { md: "37px", xs: "24px" },
@@ -320,6 +326,7 @@ function Bot() {
               {/* Welcome message */}
               {botMsgCount >= 0 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -345,6 +352,7 @@ function Bot() {
               {/* Bot */}
               {botMsgCount > 0 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -380,6 +388,7 @@ function Bot() {
                   }}
                 >
                   <Typography
+                    ref={scrollRef}
                     sx={{
                       fontFamily: "Assistant",
                       fontSize: { md: "18px", xs: "16px" },
@@ -505,6 +514,7 @@ function Bot() {
               {/* Bot */}
               {botMsgCount > 2 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -530,6 +540,7 @@ function Bot() {
               )}
               {botMsgCount > 2 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -567,6 +578,7 @@ function Bot() {
                   }}
                 >
                   <Typography
+                    ref={scrollRef}
                     sx={{
                       fontFamily: "Assistant",
                       fontSize: { md: "18px", xs: "16px" },
@@ -582,13 +594,12 @@ function Bot() {
                       px: 3,
                       py: 1.5,
                       mt: 2.5,
+                      cursor: "pointer",
                     }}
                   >
                     {/* Hi ! Welcome to our support */}
 
-                    <IconButton onClick={() => setBotMsgCount(5)}>
-                      Click to Skip
-                    </IconButton>
+                    <p onClick={() => setBotMsgCount(5)}>Click to Skip</p>
                   </Typography>
 
                   {/* Icon */}
@@ -615,6 +626,7 @@ function Bot() {
               )}
               {botMsgCount > 4 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -650,6 +662,7 @@ function Bot() {
                   }}
                 >
                   <Typography
+                    ref={scrollRef}
                     sx={{
                       fontFamily: "Assistant",
                       fontSize: { md: "18px", xs: "16px" },
@@ -677,30 +690,46 @@ function Bot() {
                         flexWrap: "wrap",
                       }}
                     >
-                      <IconButton
+                      <p
+                        style={{
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
                         onClick={() => setBotMsgCount(7)}
                         sx={{ marginLeft: "auto", width: "max-content" }}
                       >
                         Yes
-                      </IconButton>
-                      <IconButton
+                      </p>
+                      <p
+                        style={{
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
                         onClick={() => setBotMsgCount(7)}
                         sx={{ marginLeft: "auto", width: "max-content" }}
                       >
                         No
-                      </IconButton>
-                      <IconButton
+                      </p>
+                      <p
+                        style={{
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
                         onClick={() => setBotMsgCount(7)}
                         sx={{ marginLeft: "auto", width: "max-content" }}
                       >
                         Not now
-                      </IconButton>
-                      <IconButton
+                      </p>
+                      <p
+                        style={{
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
                         onClick={() => setBotMsgCount(7)}
                         sx={{ marginLeft: "auto", width: "max-content" }}
                       >
                         Wish not to talk about it
-                      </IconButton>
+                      </p>
                     </Box>
                   </Typography>
 
@@ -727,6 +756,7 @@ function Bot() {
               )}
               {botMsgCount > 6 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -753,6 +783,7 @@ function Bot() {
               )}
               {botMsgCount > 7 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -779,6 +810,7 @@ function Bot() {
               )}
               {botMsgCount > 8 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -805,6 +837,7 @@ function Bot() {
               )}
               {botMsgCount > 9 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -831,6 +864,7 @@ function Bot() {
               )}
               {botMsgCount > 10 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
@@ -858,6 +892,7 @@ function Bot() {
 
               {botMsgCount > 11 && (
                 <Typography
+                  ref={scrollRef}
                   sx={{
                     fontFamily: "Assistant",
                     fontSize: { md: "18px", xs: "16px" },
