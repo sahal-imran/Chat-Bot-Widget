@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import Box from "@mui/material/Box";
 import { Container } from "@mui/system";
 import Button from "@mui/material/Button";
@@ -8,6 +9,15 @@ import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import SwitchButton from "../Chat-components/SwitchButton";
 import IconButton from "@mui/material/IconButton";
+import Excited from "../../public/Assets/emojis/1.Exited.png";
+import Happy from "../../public/Assets/emojis/2.Happy.png";
+import Proud from "../../public/Assets/emojis/3.Proud.png";
+import Confused from "../../public/Assets/emojis/4.Confused.png";
+import Shy from "../../public/Assets/emojis/5.Shy.png";
+import Worried from "../../public/Assets/emojis/6.Worried.png";
+import Lonely from "../../public/Assets/emojis/7.Lonely.png";
+import Angry from "../../public/Assets/emojis/8.Angry.png";
+import Sad from "../../public/Assets/emojis/9.Sad.png";
 
 function Bot() {
   // State to show bot
@@ -33,6 +43,53 @@ function Bot() {
     set_Help(false);
     set_Calender(true);
   };
+
+  const [botMsgCount, setBotMsgCount] = useState(0);
+
+  useEffect(() => {
+    if (Show_Bot == true) {
+      if (botMsgCount == 0) {
+        setTimeout(() => {
+          setBotMsgCount(1);
+        }, 3000);
+      }
+      if (botMsgCount == 1) {
+        setTimeout(() => {
+          setBotMsgCount(2);
+        }, 3000);
+      }
+      if (botMsgCount == 3) {
+        setTimeout(() => {
+          setBotMsgCount(4);
+        }, 3000);
+      }
+      if (botMsgCount == 5) {
+        setTimeout(() => {
+          setBotMsgCount(6);
+        }, 3000);
+      }
+      if (botMsgCount == 7) {
+        setTimeout(() => {
+          setBotMsgCount(8);
+        }, 3000);
+      }
+      if (botMsgCount == 8) {
+        setTimeout(() => {
+          setBotMsgCount(9);
+        }, 3000);
+      }
+      if (botMsgCount == 9) {
+        setTimeout(() => {
+          setBotMsgCount(10);
+        }, 3000);
+      }
+      if (botMsgCount == 10) {
+        setTimeout(() => {
+          setBotMsgCount(11);
+        }, 3000);
+      }
+    }
+  }, [Show_Bot, botMsgCount]);
 
   return (
     <Box
@@ -261,61 +318,7 @@ function Bot() {
               }}
             >
               {/* Welcome message */}
-              <Typography
-                sx={{
-                  fontFamily: "Assistant",
-                  fontSize: { md: "18px", xs: "16px" },
-                  lineHeight: "23.54px",
-                  letterSpacing: "4%",
-                  fontWeight: 600,
-                  fontStyle: "normal",
-                  textTransform: "capitalize",
-                  color: "#FFFFFF",
-                  background: "#9A4A4D",
-                  borderRadius: "10px",
-                  px: 3,
-                  py: 1.5,
-                  textAlign: "start",
-                  alignSelf: "start",
-                }}
-              >
-                Hi ! Welcome to our support
-              </Typography>
-
-              {/* Bot */}
-              <Typography
-                sx={{
-                  fontFamily: "Assistant",
-                  fontSize: { md: "18px", xs: "16px" },
-                  lineHeight: "23.54px",
-                  letterSpacing: "4%",
-                  fontWeight: 600,
-                  fontStyle: "normal",
-                  textTransform: "capitalize",
-                  color: "#FFFFFF",
-                  background: "#9A4A4D",
-                  borderTopLeftRadius: "25px",
-                  borderBottomRightRadius: "25px",
-                  px: 3,
-                  py: 1.5,
-                  textAlign: "start",
-                  alignSelf: "start",
-                  mt: 2,
-                }}
-              >
-                Hi ! Welcome to our support
-              </Typography>
-
-              {/* User */}
-              <Box
-                sx={{
-                  mt: 2,
-                  alignSelf: "end",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              {botMsgCount >= 0 && (
                 <Typography
                   sx={{
                     fontFamily: "Assistant",
@@ -326,39 +329,562 @@ function Bot() {
                     fontStyle: "normal",
                     textTransform: "capitalize",
                     color: "#FFFFFF",
-                    background: "#FD8F8E",
+                    background: "#9A4A4D",
+                    borderRadius: "10px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    width: "80%",
+                  }}
+                >
+                  Hello, I am Mr. Andre your virtual mentor, and I am here to
+                  support and guide you.
+                </Typography>
+              )}
+              {/* Bot */}
+              {botMsgCount > 0 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
                     borderTopLeftRadius: "25px",
                     borderBottomRightRadius: "25px",
                     px: 3,
                     py: 1.5,
-                    mt: 2.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
                   }}
                 >
-                  Hi ! Welcome to our support
+                  Can you tell me how you feel today?
                 </Typography>
-                {/* Icon */}
+              )}
+              {/* User */}
+              {botMsgCount > 1 && (
                 <Box
                   sx={{
-                    position: "relative",
-                    width: { md: "60px", xs: "40px" },
-                    height: { md: "60px", xs: "40px" },
-                    ml: { md: 2, xs: 1 },
-                    borderRadius: "50px",
-                    overflow: "hidden",
-                    border: "1px solid #FD8F8E",
+                    mt: 2,
+                    alignSelf: "end",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  <Image
-                    alt=""
-                    src={"/Assets/user.png"}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                  <Typography
+                    sx={{
+                      fontFamily: "Assistant",
+                      fontSize: { md: "18px", xs: "16px" },
+                      lineHeight: "23.54px",
+                      letterSpacing: "4%",
+                      fontWeight: 600,
+                      fontStyle: "normal",
+                      textTransform: "capitalize",
+                      color: "#FFFFFF",
+                      background: "#FD8F8E",
+                      borderTopLeftRadius: "25px",
+                      borderBottomRightRadius: "25px",
+                      px: 3,
+                      py: 1.5,
+                      mt: 2.5,
+                    }}
+                  >
+                    {/* Hi ! Welcome to our support */}
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "right",
+                        width: "100%",
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <IconButton>
+                        <Image
+                          src={Excited}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Happy}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Proud}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Confused}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Shy}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Worried}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Lonely}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
+                        <Image
+                          src={Angry}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <Image
+                          src={Sad}
+                          height="30px"
+                          width="30px"
+                          sx={{ mr: 3 }}
+                        />
+                      </IconButton>
+                    </Box>
+                  </Typography>
+
+                  {/* Icon */}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: { md: "60px", xs: "40px" },
+                      height: { md: "60px", xs: "40px" },
+                      ml: { md: 2, xs: 1 },
+                      borderRadius: "50px",
+                      overflow: "hidden",
+                      border: "1px solid #FD8F8E",
+                    }}
+                  >
+                    <Image
+                      alt=""
+                      src={"/Assets/user.png"}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </Box>
                 </Box>
-              </Box>
+              )}
+              {/* Bot */}
+              {botMsgCount > 2 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  I believe anger can be controlled
+                </Typography>
+              )}
+              {botMsgCount > 2 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  I would also you like to tell me what could have made you
+                  angry?
+                </Typography>
+              )}
+
+              {/* User */}
+              {botMsgCount > 3 && (
+                <Box
+                  sx={{
+                    mt: 2,
+                    alignSelf: "end",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Assistant",
+                      fontSize: { md: "18px", xs: "16px" },
+                      lineHeight: "23.54px",
+                      letterSpacing: "4%",
+                      fontWeight: 600,
+                      fontStyle: "normal",
+                      textTransform: "capitalize",
+                      color: "#FFFFFF",
+                      background: "#FD8F8E",
+                      borderTopLeftRadius: "25px",
+                      borderBottomRightRadius: "25px",
+                      px: 3,
+                      py: 1.5,
+                      mt: 2.5,
+                    }}
+                  >
+                    {/* Hi ! Welcome to our support */}
+
+                    <IconButton onClick={() => setBotMsgCount(5)}>
+                      Click to Skip
+                    </IconButton>
+                  </Typography>
+
+                  {/* Icon */}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: { md: "60px", xs: "40px" },
+                      height: { md: "60px", xs: "40px" },
+                      ml: { md: 2, xs: 1 },
+                      mt: 8,
+                      borderRadius: "50px",
+                      overflow: "hidden",
+                      border: "1px solid #FD8F8E",
+                    }}
+                  >
+                    <Image
+                      alt=""
+                      src={"/Assets/user.png"}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </Box>
+                </Box>
+              )}
+              {botMsgCount > 4 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  Do you want to talk about it with someone?
+                </Typography>
+              )}
+              {/* User */}
+              {botMsgCount > 5 && (
+                <Box
+                  sx={{
+                    mt: 2,
+                    alignSelf: "end",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Assistant",
+                      fontSize: { md: "18px", xs: "16px" },
+                      lineHeight: "23.54px",
+                      letterSpacing: "4%",
+                      fontWeight: 600,
+                      fontStyle: "normal",
+                      textTransform: "capitalize",
+                      color: "#FFFFFF",
+                      background: "#FD8F8E",
+                      borderTopLeftRadius: "25px",
+                      borderBottomRightRadius: "25px",
+                      px: 3,
+                      py: 1.5,
+                      mt: 2.5,
+                    }}
+                  >
+                    {/* Hi ! Welcome to our support */}
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "right",
+                        flexDirection: "column",
+
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <IconButton
+                        onClick={() => setBotMsgCount(7)}
+                        sx={{ marginLeft: "auto", width: "max-content" }}
+                      >
+                        Yes
+                      </IconButton>
+                      <IconButton
+                        onClick={() => setBotMsgCount(7)}
+                        sx={{ marginLeft: "auto", width: "max-content" }}
+                      >
+                        No
+                      </IconButton>
+                      <IconButton
+                        onClick={() => setBotMsgCount(7)}
+                        sx={{ marginLeft: "auto", width: "max-content" }}
+                      >
+                        Not now
+                      </IconButton>
+                      <IconButton
+                        onClick={() => setBotMsgCount(7)}
+                        sx={{ marginLeft: "auto", width: "max-content" }}
+                      >
+                        Wish not to talk about it
+                      </IconButton>
+                    </Box>
+                  </Typography>
+
+                  {/* Icon */}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: { md: "60px", xs: "40px" },
+                      height: { md: "60px", xs: "40px" },
+                      ml: { md: 2, xs: 1 },
+                      borderRadius: "50px",
+                      overflow: "hidden",
+                      border: "1px solid #FD8F8E",
+                    }}
+                  >
+                    <Image
+                      alt=""
+                      src={"/Assets/user.png"}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </Box>
+                </Box>
+              )}
+              {botMsgCount > 6 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  Thank you for giving your precious time to this, I have some
+                  motivational words for you and trust me, they are super cool.
+                </Typography>
+              )}
+              {botMsgCount > 7 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  “If you can control the way you feel then you are on your way
+                  to freedom” Also
+                </Typography>
+              )}
+              {botMsgCount > 8 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  “If you are patient in one moment of anger, you will escape a
+                  hundred days of sorrow”
+                </Typography>
+              )}
+              {botMsgCount > 9 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  Sounds cool right? I have another package for you and it
+                  sounds more interesting
+                </Typography>
+              )}
+              {botMsgCount > 10 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  It is a word of affirmation to you and I want you to say it to
+                  yourself, it will help you feel better.
+                </Typography>
+              )}
+
+              {botMsgCount > 11 && (
+                <Typography
+                  sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
+                    mt: 2,
+                    width: "80%",
+                  }}
+                >
+                  Word of Affirmation: I refuse to be angry, I take charge of my
+                  mind.
+                </Typography>
+              )}
             </Box>
 
-            {/* Message typer */}
+            {/* Message typer
             <Box
               sx={{
                 width: "100%",
@@ -380,7 +906,7 @@ function Bot() {
                   alignItems: "center",
                 }}
               >
-                {/* Input */}
+                {/* Input *+/}
                 <Box
                   sx={{
                     width: { md: "85%", xs: "90%" },
@@ -409,7 +935,7 @@ function Bot() {
                     placeholder="Type your message"
                   />
                 </Box>
-                {/* Button */}
+                {/* Button *+/}
                 <Box
                   sx={{
                     width: { md: "15%", xs: "20%" },
@@ -446,7 +972,7 @@ function Bot() {
                   </IconButton>
                 </Box>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
 
           {/* Image */}
@@ -465,8 +991,6 @@ function Bot() {
               objectFit="contain"
             />
           </Box>
-
-          
         </Box>
       </Box>
     </Box>
