@@ -18,6 +18,7 @@ import Worried from "../../public/Assets/emojis/6.Worried.png";
 import Lonely from "../../public/Assets/emojis/7.Lonely.png";
 import Angry from "../../public/Assets/emojis/8.Angry.png";
 import Sad from "../../public/Assets/emojis/9.Sad.png";
+import Hello from "../../public/Assets/hello.png";
 
 function Bot() {
   const scrollRef = useRef();
@@ -58,37 +59,37 @@ function Bot() {
       if (botMsgCount == 1) {
         setTimeout(() => {
           setBotMsgCount(2);
-        }, 3000);
+        }, 1000);
       }
       if (botMsgCount == 3) {
         setTimeout(() => {
           setBotMsgCount(4);
-        }, 3000);
+        }, 500);
+      }
+      if (botMsgCount == 4) {
+        setTimeout(() => {
+          setBotMsgCount(5);
+        }, 1500);
       }
       if (botMsgCount == 5) {
         setTimeout(() => {
           setBotMsgCount(6);
-        }, 3000);
+        }, 2500);
+      }
+      if (botMsgCount == 6) {
+        setTimeout(() => {
+          setBotMsgCount(7);
+        }, 2500);
       }
       if (botMsgCount == 7) {
         setTimeout(() => {
           setBotMsgCount(8);
-        }, 3000);
+        }, 2500);
       }
       if (botMsgCount == 8) {
         setTimeout(() => {
           setBotMsgCount(9);
-        }, 3000);
-      }
-      if (botMsgCount == 9) {
-        setTimeout(() => {
-          setBotMsgCount(10);
-        }, 3000);
-      }
-      if (botMsgCount == 10) {
-        setTimeout(() => {
-          setBotMsgCount(11);
-        }, 3000);
+        }, 1500);
       }
     }
   }, [Show_Bot, botMsgCount]);
@@ -325,29 +326,43 @@ function Bot() {
             >
               {/* Welcome message */}
               {botMsgCount >= 0 && (
-                <Typography
-                  ref={scrollRef}
-                  sx={{
-                    fontFamily: "Assistant",
-                    fontSize: { md: "18px", xs: "16px" },
-                    lineHeight: "23.54px",
-                    letterSpacing: "4%",
-                    fontWeight: 600,
-                    fontStyle: "normal",
-                    textTransform: "capitalize",
-                    color: "#FFFFFF",
-                    background: "#9A4A4D",
-                    borderRadius: "10px",
-                    px: 3,
-                    py: 1.5,
-                    textAlign: "start",
-                    alignSelf: "start",
-                    width: "80%",
-                  }}
-                >
-                  Hello, I am Mr. Andre your virtual mentor, and I am here to
-                  support and guide you.
-                </Typography>
+                <Box sx={{ width: "100%", height: "auto" }}>
+                  <Image
+                    src={Hello}
+                    height="150px"
+                    width="150px"
+                    // layout="fill"
+                    // objectFit="contain"
+                    sx={{ mr: 9 }}
+                  />
+                </Box>
+              )}
+              {botMsgCount >= 0 && (
+                <>
+                  <Typography
+                    ref={scrollRef}
+                    sx={{
+                      fontFamily: "Assistant",
+                      fontSize: { md: "18px", xs: "16px" },
+                      lineHeight: "23.54px",
+                      letterSpacing: "4%",
+                      fontWeight: 600,
+                      fontStyle: "normal",
+                      textTransform: "capitalize",
+                      color: "#FFFFFF",
+                      background: "#9A4A4D",
+                      borderRadius: "10px",
+                      px: 3,
+                      py: 1.5,
+                      textAlign: "start",
+                      alignSelf: "start",
+                      width: "80%",
+                    }}
+                  >
+                    Hello, I am Mr. Andre your virtual mentor, and I am here to
+                    support and guide you.
+                  </Typography>
+                </>
               )}
               {/* Bot */}
               {botMsgCount > 0 && (
@@ -415,7 +430,7 @@ function Bot() {
                         flexWrap: "wrap",
                       }}
                     >
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Excited}
                           height="30px"
@@ -423,7 +438,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Happy}
                           height="30px"
@@ -431,7 +446,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Proud}
                           height="30px"
@@ -439,7 +454,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Confused}
                           height="30px"
@@ -447,7 +462,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Shy}
                           height="30px"
@@ -455,7 +470,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Worried}
                           height="30px"
@@ -463,7 +478,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Lonely}
                           height="30px"
@@ -479,7 +494,7 @@ function Bot() {
                           sx={{ mr: 3 }}
                         />
                       </IconButton>
-                      <IconButton>
+                      <IconButton onClick={() => setBotMsgCount(3)}>
                         <Image
                           src={Sad}
                           height="30px"
@@ -512,7 +527,7 @@ function Bot() {
                 </Box>
               )}
               {/* Bot */}
-              {botMsgCount > 2 && (
+              {/* {botMsgCount > 2 && (
                 <Typography
                   ref={scrollRef}
                   sx={{
@@ -537,8 +552,8 @@ function Bot() {
                 >
                   I believe anger can be controlled
                 </Typography>
-              )}
-              {botMsgCount > 2 && (
+              )} */}
+              {botMsgCount > 3 && (
                 <Typography
                   ref={scrollRef}
                   sx={{
@@ -561,68 +576,9 @@ function Bot() {
                     width: "80%",
                   }}
                 >
-                  I would also you like to tell me what could have made you
-                  angry?
+                  “If you can control the way you feel then you are on your way
+                  to freedom”
                 </Typography>
-              )}
-
-              {/* User */}
-              {botMsgCount > 3 && (
-                <Box
-                  sx={{
-                    mt: 2,
-                    alignSelf: "end",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    ref={scrollRef}
-                    sx={{
-                      fontFamily: "Assistant",
-                      fontSize: { md: "18px", xs: "16px" },
-                      lineHeight: "23.54px",
-                      letterSpacing: "4%",
-                      fontWeight: 600,
-                      fontStyle: "normal",
-                      textTransform: "capitalize",
-                      color: "#FFFFFF",
-                      background: "#FD8F8E",
-                      borderTopLeftRadius: "25px",
-                      borderBottomRightRadius: "25px",
-                      px: 3,
-                      py: 1.5,
-                      mt: 2.5,
-                      cursor: "pointer",
-                    }}
-                  >
-                    {/* Hi ! Welcome to our support */}
-
-                    <p onClick={() => setBotMsgCount(5)}>Click to Skip</p>
-                  </Typography>
-
-                  {/* Icon */}
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: { md: "60px", xs: "40px" },
-                      height: { md: "60px", xs: "40px" },
-                      ml: { md: 2, xs: 1 },
-                      mt: 8,
-                      borderRadius: "50px",
-                      overflow: "hidden",
-                      border: "1px solid #FD8F8E",
-                    }}
-                  >
-                    <Image
-                      alt=""
-                      src={"/Assets/user.png"}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Box>
-                </Box>
               )}
               {botMsgCount > 4 && (
                 <Typography
@@ -647,112 +603,35 @@ function Bot() {
                     width: "80%",
                   }}
                 >
-                  Do you want to talk about it with someone?
+                  Thank you for giving your precious time to this.
                 </Typography>
               )}
-              {/* User */}
               {botMsgCount > 5 && (
-                <Box
+                <Typography
+                  ref={scrollRef}
                   sx={{
+                    fontFamily: "Assistant",
+                    fontSize: { md: "18px", xs: "16px" },
+                    lineHeight: "23.54px",
+                    letterSpacing: "4%",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    background: "#9A4A4D",
+                    borderTopLeftRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                    px: 3,
+                    py: 1.5,
+                    textAlign: "start",
+                    alignSelf: "start",
                     mt: 2,
-                    alignSelf: "end",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    width: "80%",
                   }}
                 >
-                  <Typography
-                    ref={scrollRef}
-                    sx={{
-                      fontFamily: "Assistant",
-                      fontSize: { md: "18px", xs: "16px" },
-                      lineHeight: "23.54px",
-                      letterSpacing: "4%",
-                      fontWeight: 600,
-                      fontStyle: "normal",
-                      textTransform: "capitalize",
-                      color: "#FFFFFF",
-                      background: "#FD8F8E",
-                      borderTopLeftRadius: "25px",
-                      borderBottomRightRadius: "25px",
-                      px: 3,
-                      py: 1.5,
-                      mt: 2.5,
-                    }}
-                  >
-                    {/* Hi ! Welcome to our support */}
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "right",
-                        flexDirection: "column",
-
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <p
-                        style={{
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                        }}
-                        onClick={() => setBotMsgCount(7)}
-                        sx={{ marginLeft: "auto", width: "max-content" }}
-                      >
-                        Yes
-                      </p>
-                      <p
-                        style={{
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                        }}
-                        onClick={() => setBotMsgCount(7)}
-                        sx={{ marginLeft: "auto", width: "max-content" }}
-                      >
-                        No
-                      </p>
-                      <p
-                        style={{
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                        }}
-                        onClick={() => setBotMsgCount(7)}
-                        sx={{ marginLeft: "auto", width: "max-content" }}
-                      >
-                        Not now
-                      </p>
-                      <p
-                        style={{
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                        }}
-                        onClick={() => setBotMsgCount(7)}
-                        sx={{ marginLeft: "auto", width: "max-content" }}
-                      >
-                        Wish not to talk about it
-                      </p>
-                    </Box>
-                  </Typography>
-
-                  {/* Icon */}
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: { md: "60px", xs: "40px" },
-                      height: { md: "60px", xs: "40px" },
-                      ml: { md: 2, xs: 1 },
-                      borderRadius: "50px",
-                      overflow: "hidden",
-                      border: "1px solid #FD8F8E",
-                    }}
-                  >
-                    <Image
-                      alt=""
-                      src={"/Assets/user.png"}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Box>
-                </Box>
+                  Just a friendly reminder that your counseling department is
+                  available to support you.
+                </Typography>
               )}
               {botMsgCount > 6 && (
                 <Typography
@@ -777,8 +656,7 @@ function Bot() {
                     width: "80%",
                   }}
                 >
-                  Thank you for giving your precious time to this, I have some
-                  motivational words for you and trust me, they are super cool.
+                  Their office hours are in building A room 200.
                 </Typography>
               )}
               {botMsgCount > 7 && (
@@ -804,8 +682,7 @@ function Bot() {
                     width: "80%",
                   }}
                 >
-                  “If you can control the way you feel then you are on your way
-                  to freedom” Also
+                  Their contacts info are:
                 </Typography>
               )}
               {botMsgCount > 8 && (
@@ -831,90 +708,7 @@ function Bot() {
                     width: "80%",
                   }}
                 >
-                  “If you are patient in one moment of anger, you will escape a
-                  hundred days of sorrow”
-                </Typography>
-              )}
-              {botMsgCount > 9 && (
-                <Typography
-                  ref={scrollRef}
-                  sx={{
-                    fontFamily: "Assistant",
-                    fontSize: { md: "18px", xs: "16px" },
-                    lineHeight: "23.54px",
-                    letterSpacing: "4%",
-                    fontWeight: 600,
-                    fontStyle: "normal",
-                    textTransform: "capitalize",
-                    color: "#FFFFFF",
-                    background: "#9A4A4D",
-                    borderTopLeftRadius: "25px",
-                    borderBottomRightRadius: "25px",
-                    px: 3,
-                    py: 1.5,
-                    textAlign: "start",
-                    alignSelf: "start",
-                    mt: 2,
-                    width: "80%",
-                  }}
-                >
-                  Sounds cool right? I have another package for you and it
-                  sounds more interesting
-                </Typography>
-              )}
-              {botMsgCount > 10 && (
-                <Typography
-                  ref={scrollRef}
-                  sx={{
-                    fontFamily: "Assistant",
-                    fontSize: { md: "18px", xs: "16px" },
-                    lineHeight: "23.54px",
-                    letterSpacing: "4%",
-                    fontWeight: 600,
-                    fontStyle: "normal",
-                    textTransform: "capitalize",
-                    color: "#FFFFFF",
-                    background: "#9A4A4D",
-                    borderTopLeftRadius: "25px",
-                    borderBottomRightRadius: "25px",
-                    px: 3,
-                    py: 1.5,
-                    textAlign: "start",
-                    alignSelf: "start",
-                    mt: 2,
-                    width: "80%",
-                  }}
-                >
-                  It is a word of affirmation to you and I want you to say it to
-                  yourself, it will help you feel better.
-                </Typography>
-              )}
-
-              {botMsgCount > 11 && (
-                <Typography
-                  ref={scrollRef}
-                  sx={{
-                    fontFamily: "Assistant",
-                    fontSize: { md: "18px", xs: "16px" },
-                    lineHeight: "23.54px",
-                    letterSpacing: "4%",
-                    fontWeight: 600,
-                    fontStyle: "normal",
-                    textTransform: "capitalize",
-                    color: "#FFFFFF",
-                    background: "#9A4A4D",
-                    borderTopLeftRadius: "25px",
-                    borderBottomRightRadius: "25px",
-                    px: 3,
-                    py: 1.5,
-                    textAlign: "start",
-                    alignSelf: "start",
-                    mt: 2,
-                    width: "80%",
-                  }}
-                >
-                  Word of Affirmation: I refuse to be angry, I take charge of my
-                  mind.
+                  Jeanette b (617) 555-4566
                 </Typography>
               )}
             </Box>
