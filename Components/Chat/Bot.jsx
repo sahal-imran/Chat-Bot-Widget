@@ -222,7 +222,7 @@ function Bot() {
                 right: { md: "30px", xs: "20px" },
                 bottom: "100px",
                 overflow: "hidden",
-                boxShadow:"rgba(0, 0, 0, 0.1) 0px 4px 12px"
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
               }
             : {
                 display: "none",
@@ -310,8 +310,8 @@ function Bot() {
               borderRadius: "5px",
               "&::-webkit-scrollbar": { width: "0px" },
               // p: { md: 2, xs: 2 },
-              px:2,
-              pt:2,
+              px: 2,
+              pt: 2,
               position: "relative",
             }}
           >
@@ -330,18 +330,19 @@ function Bot() {
               {/* Welcome message */}
               {botMsgCount >= 0 && (
                 <Box sx={{ width: "100%", height: "auto" }}>
-                  <Image
-                    src={Hello}
-                    height="150px"
-                    width="150px"
-                    // layout="fill"
-                    // objectFit="contain"
-                    sx={{ mr: 9 }}
-                  />
+                  <Fade big>
+                    <Image
+                      src={Hello}
+                      alt={"img"}
+                      height="150px"
+                      width="150px"
+                    />
+                  </Fade>
                 </Box>
               )}
               {botMsgCount >= 0 && (
                 <>
+                <Fade big>
                   <Typography
                     ref={scrollRef}
                     sx={{
@@ -365,6 +366,7 @@ function Bot() {
                     Hello, I am Mr. Andre your virtual mentor, and I am here to
                     support and guide you.
                   </Typography>
+                  </Fade>
                 </>
               )}
               {/* Bot */}
@@ -521,6 +523,7 @@ function Bot() {
                     sx={{
                       position: "relative",
                       width: { md: "60px", xs: "40px" },
+                      minWidth: { md: "60px", xs: "40px" },
                       height: { md: "60px", xs: "40px" },
                       ml: { md: 2, xs: 1 },
                       borderRadius: "50px",
@@ -530,9 +533,9 @@ function Bot() {
                   >
                     <Image
                       alt=""
-                      src={"/Assets/user.png"}
+                      src={"/Assets/bot.jpg"}
                       layout="fill"
-                      objectFit="cover"
+                      objectFit="contain"
                     />
                   </Box>
                 </Box>
@@ -591,9 +594,6 @@ function Bot() {
                   to freedom”
                 </Typography>
               )}
-
-
-            
 
               {botMsgCount > 4 && (
                 <Typography
