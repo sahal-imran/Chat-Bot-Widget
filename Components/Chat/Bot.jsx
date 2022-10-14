@@ -104,7 +104,7 @@ function Bot() {
           ? {
               width: "100vw",
               height: "100vh",
-              background: "#A9A6A6",
+              // background: "#A9A6A6",
               overflow: "hidden",
               position: "relative",
               transition: "all 0.3s ease",
@@ -126,8 +126,8 @@ function Bot() {
           background: "#9A4A4D",
           color: "white",
           p: 0,
-          width: { md: "260px", xs: "150px" },
-          height: { md: "65px", xs: "50px" },
+          width: { md: "180px", xs: "140px" },
+          height: { md: "50px", xs: "50px" },
           boxShadow:
             "0px 4px 4px rgba(0, 0, 0, 0.25), 0px 6px 14px rgba(0, 0, 0, 0.07)",
           borderRadius: "45px",
@@ -178,7 +178,7 @@ function Bot() {
             ref={scrollRef}
             sx={{
               fontFamily: "Assistant",
-              fontSize: { md: "37px", xs: "24px" },
+              fontSize: { md: "24px", xs: "24px" },
               lineHeight: "40px",
               fontWeight: 600,
               fontStyle: "normal",
@@ -222,6 +222,7 @@ function Bot() {
                 right: { md: "30px", xs: "20px" },
                 bottom: "100px",
                 overflow: "hidden",
+                boxShadow:"rgba(0, 0, 0, 0.1) 0px 4px 12px"
               }
             : {
                 display: "none",
@@ -308,7 +309,9 @@ function Bot() {
                 "0px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 4px 7px rgba(0, 0, 0, 0.07)",
               borderRadius: "5px",
               "&::-webkit-scrollbar": { width: "0px" },
-              p: { md: 2, xs: 2 },
+              // p: { md: 2, xs: 2 },
+              px:2,
+              pt:2,
               position: "relative",
             }}
           >
@@ -418,7 +421,6 @@ function Bot() {
                       borderBottomRightRadius: "25px",
                       px: 3,
                       py: 1.5,
-                      mt: 2.5,
                     }}
                   >
                     {/* Hi ! Welcome to our support */}
@@ -436,6 +438,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -444,6 +447,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -452,6 +456,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -460,6 +465,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -468,6 +474,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -476,6 +483,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -484,6 +492,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -492,6 +501,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                       <IconButton onClick={() => setBotMsgCount(3)}>
@@ -500,6 +510,7 @@ function Bot() {
                           height="30px"
                           width="30px"
                           sx={{ mr: 3 }}
+                          alt="ico"
                         />
                       </IconButton>
                     </Box>
@@ -580,6 +591,10 @@ function Bot() {
                   to freedom”
                 </Typography>
               )}
+
+
+            
+
               {botMsgCount > 4 && (
                 <Typography
                   ref={scrollRef}
@@ -713,7 +728,7 @@ function Bot() {
               )}
             </Box>
 
-            {/* Message typer
+            {/* Message typer */}
             <Box
               sx={{
                 width: "100%",
@@ -726,7 +741,7 @@ function Bot() {
               <Box
                 sx={{
                   width: "90%",
-                  height: "62px",
+                  height: "56px",
                   background: "#F8F8F8",
                   borderRadius: "10px",
                   boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.25)",
@@ -735,7 +750,7 @@ function Bot() {
                   alignItems: "center",
                 }}
               >
-                {/* Input *+/}
+                {/* Input */}
                 <Box
                   sx={{
                     width: { md: "85%", xs: "90%" },
@@ -764,7 +779,7 @@ function Bot() {
                     placeholder="Type your message"
                   />
                 </Box>
-                {/* Button *+/}
+                {/* Button */}
                 <Box
                   sx={{
                     width: { md: "15%", xs: "20%" },
@@ -801,7 +816,7 @@ function Bot() {
                   </IconButton>
                 </Box>
               </Box>
-            </Box> */}
+            </Box>
           </Box>
 
           {/* Image */}
